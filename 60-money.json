@@ -1,0 +1,62 @@
+[
+  {
+    "id": "MONEY_MERCURY_WEALTH",
+    "category": "money",
+    "priority": 85,
+    "when": [
+      {"path": "mounts.mercury", "op": ">=", "value": 0.7}
+    ],
+    "weight": 0.85,
+    "confidenceImpact": 0.12,
+    "outputs": {
+      "title": "धन और संपत्ति की संभावना",
+      "text": "मजबूत बुध पर्वत व्यापार, निवेश और धन संचय की प्रतिभा दर्शाता है। आर्थिक सफलता की अच्छी संभावना है।"
+    },
+    "tags": ["wealth", "prosperity"]
+  },
+  {
+    "id": "MONEY_APOLLO_SUCCESS",
+    "category": "money",
+    "priority": 80,
+    "when": [
+      {"path": "mounts.apollo", "op": ">=", "value": 0.65}
+    ],
+    "weight": 0.8,
+    "confidenceImpact": 0.1,
+    "outputs": {
+      "title": "सूर्य का आशीर्वाद",
+      "text": "मजबूत सूर्य (अपोलो) पर्वत कला, रचनात्मकता और यश से आर्थिक लाभ का संकेत देता है।"
+    },
+    "tags": ["success", "prosperity"]
+  },
+  {
+    "id": "MONEY_VENUS_COMFORT",
+    "category": "money",
+    "priority": 75,
+    "when": [
+      {"path": "mounts.venus", "op": ">=", "value": 0.7}
+    ],
+    "weight": 0.75,
+    "confidenceImpact": 0.09,
+    "outputs": {
+      "title": "आरामदायक जीवन",
+      "text": "शुक्र पर्वत भौतिक सुख, आरामदायक जीवन और संसाधनों तक पहुंच दर्शाता है।"
+    },
+    "tags": ["comfort", "material-success"]
+  },
+  {
+    "id": "MONEY_SATURN_CAUTION",
+    "category": "money",
+    "priority": 60,
+    "when": [
+      {"path": "mounts.saturn", "op": ">=", "value": 0.65}
+    ],
+    "weight": 0.6,
+    "confidenceImpact": 0.06,
+    "outputs": {
+      "title": "सतर्कता आवश्यक",
+      "text": "शनि पर्वत बुद्धिमानी से बचत और सावधानीपूर्वक निवेश की आवश्यकता दर्शाता है। दीर्घकालीन योजना महत्वपूर्ण है।"
+    },
+    "tags": ["caution", "planning"]
+  }
+]

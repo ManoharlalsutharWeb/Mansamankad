@@ -1,0 +1,65 @@
+[
+  {
+    "id": "TIMELINE_POSITIVE_OUTLOOK",
+    "category": "timeline",
+    "priority": 85,
+    "when": [
+      {"path": "confidence", "op": ">=", "value": 0.7},
+      {"path": "qualityScore", "op": ">=", "value": 0.65}
+    ],
+    "weight": 0.85,
+    "confidenceImpact": 0.12,
+    "outputs": {
+      "title": "सकारात्मक भविष्य दृष्टिकोण",
+      "text": "आपकी हस्तरेखा आने वाले वर्षों में सकारात्मक विकास का संकेत देती है। सही दिशा में प्रयास करें।"
+    },
+    "tags": ["positive", "growth"]
+  },
+  {
+    "id": "TIMELINE_FATE_LINE_STRENGTH",
+    "category": "timeline",
+    "priority": 80,
+    "when": [
+      {"path": "fateLine.present", "op": ">=", "value": 0.7},
+      {"path": "fateLine.strength", "op": ">=", "value": 0.7}
+    ],
+    "weight": 0.8,
+    "confidenceImpact": 0.11,
+    "outputs": {
+      "title": "निर्धारित मार्ग",
+      "text": "मजबूत भाग्य रेखा भविष्य को निर्धारित करने वाली शक्तियों का संकेत देती है। आपका जीवन पथ स्पष्ट है।"
+    },
+    "tags": ["destiny", "predetermined"]
+  },
+  {
+    "id": "TIMELINE_MULTIPLE_PHASES",
+    "category": "timeline",
+    "priority": 75,
+    "when": [
+      {"path": "headLine.forks", "op": ">=", "value": 1}
+    ],
+    "weight": 0.75,
+    "confidenceImpact": 0.09,
+    "outputs": {
+      "title": "जीवन में अलग अलग चरण",
+      "text": "मस्तिष्क रेखा पर फॉर्क जीवन के विभिन्न चरणों और संभावित परिवर्तनों का संकेत देते हैं।"
+    },
+    "tags": ["phases", "transitions"]
+  },
+  {
+    "id": "TIMELINE_STABILITY_AHEAD",
+    "category": "timeline",
+    "priority": 70,
+    "when": [
+      {"path": "lifeLine.breaks", "op": "<=", "value": 1},
+      {"path": "heartLine.breaks", "op": "<=", "value": 1}
+    ],
+    "weight": 0.7,
+    "confidenceImpact": 0.08,
+    "outputs": {
+      "title": "आने वाले वर्षों में स्थिरता",
+      "text": "कम व्यवधान आने वाले वर्षों में स्थिरता और निरंतरता का संकेत देते हैं।"
+    },
+    "tags": ["stability", "continuity"]
+  }
+]

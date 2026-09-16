@@ -1,0 +1,49 @@
+[
+  {
+    "id": "CHILDREN_LIFE_LINE_FORKS",
+    "category": "children",
+    "priority": 80,
+    "when": [
+      {"path": "lifeLine.forks", "op": ">=", "value": 1},
+      {"path": "lifeLine.length", "op": ">=", "value": 0.65}
+    ],
+    "weight": 0.8,
+    "confidenceImpact": 0.1,
+    "outputs": {
+      "title": "संतान की संभावना",
+      "text": "जीवन रेखा पर फॉर्क संतान होने की सकारात्मक संभावना दर्शाते हैं। आमतौर पर 1-2 संतानें इंगित होती हैं।"
+    },
+    "tags": ["children-present", "life-branch"]
+  },
+  {
+    "id": "CHILDREN_HEART_STABILITY",
+    "category": "children",
+    "priority": 70,
+    "when": [
+      {"path": "heartLine.breaks", "op": "<=", "value": 1},
+      {"path": "heartLine.length", "op": ">=", "value": 0.65}
+    ],
+    "weight": 0.7,
+    "confidenceImpact": 0.08,
+    "outputs": {
+      "title": "पारिवारिक स्थिरता",
+      "text": "स्पष्ट हृदय रेखा सुखी पारिवारिक जीवन और बच्चों की देखभाल की क्षमता दर्शाती है।"
+    },
+    "tags": ["family-stability", "parenting"]
+  },
+  {
+    "id": "CHILDREN_VENUS_MOUNT",
+    "category": "children",
+    "priority": 65,
+    "when": [
+      {"path": "mounts.venus", "op": ">=", "value": 0.65}
+    ],
+    "weight": 0.65,
+    "confidenceImpact": 0.07,
+    "outputs": {
+      "title": "शुक्र पर्वत प्रभाव",
+      "text": "मजबूत शुक्र पर्वत प्रजनन क्षमता और पारिवारिक स्नेह का संकेत देता है।"
+    },
+    "tags": ["venus", "fertility"]
+  }
+]

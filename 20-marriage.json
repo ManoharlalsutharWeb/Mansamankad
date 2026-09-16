@@ -1,0 +1,34 @@
+[
+  {
+    "id": "MARRIAGE_STRONG_HEART_LINE",
+    "category": "marriage",
+    "priority": 85,
+    "when": [
+      {"path": "heartLine.length", "op": ">=", "value": 0.7},
+      {"path": "heartLine.depth", "op": ">=", "value": 0.6}
+    ],
+    "weight": 0.85,
+    "confidenceImpact": 0.12,
+    "outputs": {
+      "title": "विवाह की मजबूत संभावना",
+      "text": "स्पष्ट और गहरी हृदय रेखा भावनात्मक स्थिरता और गहरे संबंधों की क्षमता दर्शाती है।"
+    },
+    "tags": ["stable-relationship", "emotional-depth"]
+  },
+  {
+    "id": "MARRIAGE_LIFE_HEART_BALANCE",
+    "category": "marriage",
+    "priority": 75,
+    "when": [
+      {"path": "lifeLine.length", "op": ">=", "value": 0.65},
+      {"path": "heartLine.length", "op": ">=", "value": 0.65}
+    ],
+    "weight": 0.75,
+    "confidenceImpact": 0.1,
+    "outputs": {
+      "title": "संतुलित वैवाहिक जीवन",
+      "text": "जीवन और हृदय रेखाओं का अच्छा संतुलन एक स्थिर और संतोषजनक वैवाहिक जीवन का संकेत देता है।"
+    },
+    "tags": ["balance", "harmony"]
+  }
+]

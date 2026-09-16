@@ -1,0 +1,80 @@
+[
+  {
+    "id": "HEALTH_STRONG_LIFE_LINE",
+    "category": "health",
+    "priority": 85,
+    "when": [
+      {"path": "lifeLine.length", "op": ">=", "value": 0.8},
+      {"path": "lifeLine.depth", "op": ">=", "value": 0.7}
+    ],
+    "weight": 0.85,
+    "confidenceImpact": 0.12,
+    "outputs": {
+      "title": "दीर्घ और स्वस्थ जीवन",
+      "text": "लंबी और गहरी जीवन रेखा शारीरिक शक्ति, जीवन शक्ति और अच्छे स्वास्थ्य का संकेत देती है।"
+    },
+    "tags": ["health", "vitality", "longevity"]
+  },
+  {
+    "id": "HEALTH_CLEAR_HEAD_LINE",
+    "category": "health",
+    "priority": 75,
+    "when": [
+      {"path": "headLine.length", "op": ">=", "value": 0.7},
+      {"path": "headLine.breaks", "op": "<=", "value": 1}
+    ],
+    "weight": 0.75,
+    "confidenceImpact": 0.1,
+    "outputs": {
+      "title": "मानसिक स्पष्टता",
+      "text": "स्पष्ट मस्तिष्क रेखा मानसिक स्वास्थ्य, फोकस और तनाव सहन क्षमता दर्शाती है।"
+    },
+    "tags": ["mental-health", "clarity"]
+  },
+  {
+    "id": "HEALTH_HEART_BALANCE",
+    "category": "health",
+    "priority": 70,
+    "when": [
+      {"path": "heartLine.length", "op": ">=", "value": 0.65},
+      {"path": "heartLine.depth", "op": ">=", "value": 0.6}
+    ],
+    "weight": 0.7,
+    "confidenceImpact": 0.09,
+    "outputs": {
+      "title": "भावनात्मक संतुलन",
+      "text": "स्वस्थ हृदय रेखा भावनात्मक संतुलन, खुशी और सामाजिक कल्याण दर्शाती है।"
+    },
+    "tags": ["emotional-health", "happiness"]
+  },
+  {
+    "id": "HEALTH_LIFE_LINE_BREAKS",
+    "category": "health",
+    "priority": 60,
+    "when": [
+      {"path": "lifeLine.breaks", "op": ">=", "value": 2}
+    ],
+    "weight": 0.6,
+    "confidenceImpact": 0.07,
+    "outputs": {
+      "title": "स्वास्थ्य पर ध्यान आवश्यक",
+      "text": "जीवन रेखा में व्यवधान स्वास्थ्य में परिवर्तन दर्शा सकता है। नियमित जांच और स्वस्थ जीवनशैली अपनाएं।"
+    },
+    "tags": ["caution", "health-check"]
+  },
+  {
+    "id": "HEALTH_SATURN_STRESS",
+    "category": "health",
+    "priority": 65,
+    "when": [
+      {"path": "mounts.saturn", "op": ">=", "value": 0.7}
+    ],
+    "weight": 0.65,
+    "confidenceImpact": 0.08,
+    "outputs": {
+      "title": "तनाव प्रबंधन",
+      "text": "मजबूत शनि पर्वत गहन विचारशीलता दर्शाता है। तनाव प्रबंधन और ध्यान अभ्यास सहायक होंगे।"
+    },
+    "tags": ["stress", "meditation"]
+  }
+]

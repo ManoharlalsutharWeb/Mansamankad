@@ -1,0 +1,65 @@
+[
+  {
+    "id": "CAREER_STRONG_FATE_LINE",
+    "category": "career",
+    "priority": 90,
+    "when": [
+      {"path": "fateLine.present", "op": ">=", "value": 0.65},
+      {"path": "fateLine.strength", "op": ">=", "value": 0.65}
+    ],
+    "weight": 0.9,
+    "confidenceImpact": 0.15,
+    "outputs": {
+      "title": "करियर में मजबूत भाग्य",
+      "text": "स्पष्ट और मजबूत भाग्य रेखा एक निर्धारित करियर पथ और व्यावसायिक सफलता का संकेत देती है। आप अपने जीवन के लक्ष्य की ओर दृढ़ता से आगे बढ़ेंगे।"
+    },
+    "tags": ["career-destiny", "professional-success"]
+  },
+  {
+    "id": "CAREER_HEAD_JUPITER",
+    "category": "career",
+    "priority": 80,
+    "when": [
+      {"path": "headLine.length", "op": ">=", "value": 0.7},
+      {"path": "mounts.jupiter", "op": ">=", "value": 0.6}
+    ],
+    "weight": 0.8,
+    "confidenceImpact": 0.12,
+    "outputs": {
+      "title": "नेतृत्व और कमान्ड",
+      "text": "मजबूत बृहस्पति पर्वत के साथ लंबी मस्तिष्क रेखा प्रबंधकीय भूमिका और नेतृत्व की स्वाभाविक क्षमता दर्शाती है।"
+    },
+    "tags": ["leadership", "management"]
+  },
+  {
+    "id": "CAREER_MERCURY_COMMUNICATION",
+    "category": "career",
+    "priority": 75,
+    "when": [
+      {"path": "mounts.mercury", "op": ">=", "value": 0.6}
+    ],
+    "weight": 0.75,
+    "confidenceImpact": 0.1,
+    "outputs": {
+      "title": "संचार कौशल",
+      "text": "मजबूत बुध पर्वत उत्कृष्ट संचार, वाणिज्य और बिक्री कौशल दर्शाता है।"
+    },
+    "tags": ["communication", "sales"]
+  },
+  {
+    "id": "CAREER_STABLE_LINES",
+    "category": "career",
+    "priority": 70,
+    "when": [
+      {"path": "headLine.breaks", "op": "<=", "value": 1},
+      {"path": "lifeLine.breaks", "op": "<=", "value": 1}
+    ],
+    "weight": 0.7,
+    "confidenceImpact": 0.08,
+    "outputs": {
+      "title": "करियर में स्थिरता",
+      "text": "रेखाओं में न्यूनतम व्यवधान करियर में निरंतरता और स्थिरता दर्शाता है।"
+    },
+    "tags": ["stability", "continuity"]
+  }
+]

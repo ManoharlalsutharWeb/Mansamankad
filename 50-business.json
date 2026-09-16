@@ -1,0 +1,64 @@
+[
+  {
+    "id": "BUSINESS_APOLLO_MERCURY",
+    "category": "business",
+    "priority": 85,
+    "when": [
+      {"path": "mounts.apollo", "op": ">=", "value": 0.65},
+      {"path": "mounts.mercury", "op": ">=", "value": 0.65}
+    ],
+    "weight": 0.85,
+    "confidenceImpact": 0.12,
+    "outputs": {
+      "title": "व्यापार में उच्च संभावना",
+      "text": "सूर्य (अपोलो) और बुध पर्वतों की मजबूती व्यापारिक नेतृत्व, रचनात्मकता और लाभप्रदता का संकेत देती है। सुझाव: विषय वस्तु, कला, व्यापार, तकनीक।"
+    },
+    "tags": ["business-success", "entrepreneur"]
+  },
+  {
+    "id": "BUSINESS_JUPITER_INITIATIVE",
+    "category": "business",
+    "priority": 80,
+    "when": [
+      {"path": "mounts.jupiter", "op": ">=", "value": 0.7}
+    ],
+    "weight": 0.8,
+    "confidenceImpact": 0.1,
+    "outputs": {
+      "title": "व्यापारिक पहल और उद्यम",
+      "text": "मजबूत बृहस्पति पर्वत उद्यमशीलता, आत्मविश्वास और विस्तार की इच्छा दर्शाता है।"
+    },
+    "tags": ["entrepreneurship", "initiative"]
+  },
+  {
+    "id": "BUSINESS_SATURN_CAUTION",
+    "category": "business",
+    "priority": 65,
+    "when": [
+      {"path": "mounts.saturn", "op": ">=", "value": 0.6}
+    ],
+    "weight": 0.65,
+    "confidenceImpact": 0.07,
+    "outputs": {
+      "title": "व्यावहारिकता और दूरदर्शिता",
+      "text": "शनि पर्वत दीर्घकालीन सोच, जिम्मेदारी और जोखिम प्रबंधन की क्षमता दर्शाता है।"
+    },
+    "tags": ["practicality", "risk-management"]
+  },
+  {
+    "id": "BUSINESS_LIFE_STABILITY",
+    "category": "business",
+    "priority": 70,
+    "when": [
+      {"path": "lifeLine.length", "op": ">=", "value": 0.75},
+      {"path": "fateLine.present", "op": ">=", "value": 0.6}
+    ],
+    "weight": 0.7,
+    "confidenceImpact": 0.09,
+    "outputs": {
+      "title": "व्यापार में दीर्घायु",
+      "text": "लंबी जीवन रेखा और मजबूत भाग्य रेखा दीर्घकालीन व्यापारिक सफलता का संकेत देती हैं।"
+    },
+    "tags": ["longevity", "sustained-growth"]
+  }
+]

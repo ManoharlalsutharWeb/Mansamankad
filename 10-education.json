@@ -1,0 +1,49 @@
+[
+  {
+    "id": "EDU_STRONG_HEAD_LINE",
+    "category": "education",
+    "priority": 85,
+    "when": [
+      {"path": "headLine.length", "op": ">=", "value": 0.75},
+      {"path": "headLine.depth", "op": ">=", "value": 0.6}
+    ],
+    "weight": 0.85,
+    "confidenceImpact": 0.12,
+    "outputs": {
+      "title": "शिक्षा में उच्च संभावना",
+      "text": "आपकी स्पष्ट और लंबी मस्तिष्क रेखा उत्कृष्ट बुद्धिमत्ता और विश्लेषणात्मक क्षमता का संकेत देती है। उच्च शिक्षा और बौद्धिक विकास में मजबूत संभावना है।"
+    },
+    "tags": ["high-potential", "intellectual"]
+  },
+  {
+    "id": "EDU_STEADY_PROGRESS",
+    "category": "education",
+    "priority": 70,
+    "when": [
+      {"path": "headLine.breaks", "op": "<=", "value": 1},
+      {"path": "confidence", "op": ">=", "value": 0.55}
+    ],
+    "weight": 0.7,
+    "confidenceImpact": 0.08,
+    "outputs": {
+      "title": "निरंतर शैक्षणिक विकास",
+      "text": "आपकी मस्तिष्क रेखा में न्यूनतम व्यवधान है, जो निरंतर और स्थिर शिक्षा के लिए अनुकूल परिस्थितियां दर्शाता है।"
+    },
+    "tags": ["consistency", "steady-learning"]
+  },
+  {
+    "id": "EDU_JUPITER_MOUNT",
+    "category": "education",
+    "priority": 65,
+    "when": [
+      {"path": "mounts.jupiter", "op": ">=", "value": 0.6}
+    ],
+    "weight": 0.65,
+    "confidenceImpact": 0.07,
+    "outputs": {
+      "title": "बृहस्पति पर्वत प्रभाव",
+      "text": "बृहस्पति पर्वत की मजबूती आत्मविश्वास, नेतृत्व और ज्ञान की चाहत को दर्शाती है।"
+    },
+    "tags": ["jupiter", "leadership"]
+  }
+]
