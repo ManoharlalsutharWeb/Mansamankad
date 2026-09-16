@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guruji Hastrekha Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app" class="app-container">
+        <!-- Login Screen -->
+        <div id="loginScreen" class="screen login-screen active">
+            <div class="login-card">
+                <div class="login-logo">
+                    <img id="loginLogo" src="assets/guruji-logo.png" alt="Guruji Logo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22%3E%3Ccircle cx=%22100%22 cy=%22100%22 r=%2290%22 fill=%22%23FF9A2F%22/%3E%3Ctext x=%22100%22 y=%22120%22 text-anchor=%22middle%22 font-size=%2248%22 fill=%22white%22 font-weight=%22bold%22%3EG%3C/text%3E%3C/svg%3E'">
+                </div>
+                <h1>Guruji Hastrekha</h1>
+                <p class="login-subtitle">Admin Dashboard</p>
+                
+                <form id="loginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+                
+                <div id="loginError" class="error-message"></div>
+            </div>
+        </div>
+
+        <!-- Dashboard Screen -->
+        <div id="dashboardScreen" class="screen dashboard-screen">
+            <header class="app-header">
+                <div class="header-left">
+                    <img id="headerLogo" src="assets/guruji-logo.png" alt="Logo" class="header-logo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22%3E%3Ccircle cx=%22100%22 cy=%22100%22 r=%2290%22 fill=%22%23FF9A2F%22/%3E%3Ctext x=%22100%22 y=%22120%22 text-anchor=%22middle%22 font-size=%2248%22 fill=%22white%22 font-weight=%22bold%22%3EG%3C/text%3E%3C/svg%3E'">
+                    <h1>Guruji Hastrekha Admin</h1>
+                </div>
+                <div class="header-right">
+                    <button id="settingsBtn" class="btn btn-secondary btn-sm">Settings</button>
+                    <button id="logoutBtn" class="btn btn-secondary btn-sm">Logout</button>
+                </div>
+            </header>
+
+            <nav class="app-nav">
+                <button class="nav-btn active" data-view="new-report">New Report</button>
+                <button class="nav-btn" data-view="history">History</button>
+                <button class="nav-btn" data-view="settings">Settings</button>
+            </nav>
+
+            <!-- New Report View -->
+            <div id="newReportView" class="view active">
+                <div class="container">
+                    <h2>नया रिपोर्ट बनाएं</h2>
+                    
+                    <form id="newReportForm" class="report-form">
+                        <!-- Client Info -->
+                        <fieldset class="form-section">
+                            <legend>व्यक्तिगत जानकारी</legend>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="clientName">नाम *</label>
+                                    <input type="text" id="clientName" name="clientName" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="clientDOB">जन्मतिथि (वैकल्पिक)</label>
+                                    <input type="date" id="clientDOB" name="clientDOB">
+                                </div>
+                                <div class="form-group">
+                                    <label for="clientTime">जन्म का समय (वैकल्पिक)</label>
+                                    <input type="time" id="clientTime" name="clientTime">
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Hand Selection -->
+                        <fieldset class="form-section">
+                            <legend>हाथ का चयन</legend>
+                            <div class="hand-selection">
+                                <label class="radio-label">
+                                    <input type="radio" name="handType" value="left"> बाएं हाथ
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="handType" value="right"> दाएं हाथ
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="handType" value="both"> दोनों हाथ
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <!-- Image Upload -->
+                        <fieldset class="form-section">
+                            <legend>हस्तरेखा की तस्वीर अपलोड करें</legend>
+                            <p class="form-hint">सूचना: हथेली की आंतरिक हथेली की स्पष्ट तस्वीर अपलोड करें</p>
+                            
+                            <div id="imageUploadArea" class="image-upload-area">
+                                <div class="upload-slot" data-hand="single">
+                                    <input type="file" accept="image/*" class="file-input" id="palmImage">
+                                    <div class="upload-placeholder">
+                                        <p>तस्वीर क्लिक करके चुनें</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Report Range -->
+                        <fieldset class="form-section">
+                            <legend>रिपोर्ट समय सीमा</legend>
+                            <div class="form-group">
+                                <label for="timelineRange">समय सीमा चुनें *</label>
+                                <select id="timelineRange" name="timelineRange" required>
+                                    <option value="">-- चुनें --</option>
+                                    <option value="5">5 वर्ष</option>
+                                    <option value="10">10 वर्ष</option>
+                                    <option value="15">15 वर्ष</option>
+                                    <option value="20">20 वर्ष</option>
+                                </select>
+                            </div>
+                        </fieldset>
+
+                        <!-- Action Buttons -->
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">प्रीव्यू और जारी रखें</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Preview View -->
+            <div id="previewView" class="view">
+                <div class="container">
+                    <h2>रिपोर्ट प्रीव्यू</h2>
+                    
+                    <div class="preview-section">
+                        <h3>अपलोड की गई तस्वीरें</h3>
+                        <div id="previewImages" class="image-gallery"></div>
+                    </div>
+
+                    <div class="preview-section">
+                        <h3>पंक्तियों का विश्लेषण (ओवरले)</h3>
+                        <div id="previewOverlay" class="image-gallery"></div>
+                    </div>
+
+                    <div class="preview-section">
+                        <h3>गुणवत्ता और आत्मविश्वास</h3>
+                        <div id="qualityScore" class="quality-score"></div>
+                    </div>
+
+                    <div class="preview-actions">
+                        <button id="generatePdfBtn" class="btn btn-primary">PDF रिपोर्ट बनाएं</button>
+                        <button id="previewBackBtn" class="btn btn-secondary">वापस जाएं</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- History View -->
+            <div id="historyView" class="view">
+                <div class="container">
+                    <h2>पिछली रिपोर्ट</h2>
+                    
+                    <div id="historyList" class="history-list"></div>
+                    
+                    <div id="historyEmpty" class="empty-state">
+                        <p>कोई रिपोर्ट नहीं मिली</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings View -->
+            <div id="settingsView" class="view">
+                <div class="container">
+                    <h2>सेटिंग्स</h2>
+                    
+                    <div class="settings-section">
+                        <h3>पासवर्ड बदलें</h3>
+                        <form id="changePasswordForm" class="settings-form">
+                            <div class="form-group">
+                                <label for="currentPassword">वर्तमान पासवर्ड</label>
+                                <input type="password" id="currentPassword" name="currentPassword" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="newPassword">नया पासवर्ड</label>
+                                <input type="password" id="newPassword" name="newPassword" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmPassword">पासवर्ड की पुष्टि करें</label>
+                                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">पासवर्ड बदलें</button>
+                        </form>
+                        <div id="passwordMessage" class="message"></div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>डेटा प्रबंधन</h3>
+                        <p>सभी स्थानीय डेटा, रिपोर्ट और इतिहास को हटाएं।</p>
+                        <button id="deleteAllDataBtn" class="btn btn-danger">सभी डेटा हटाएं</button>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>लोगो समायोजन (वैकल्पिक)</h3>
+                        <p>लोगो को स्वचालित रूप से फसल दिए गए हैं। यदि आप समायोजन करना चाहते हैं:</p>
+                        <button id="adjustLogoBtn" class="btn btn-secondary">लोगो फसल समायोजित करें</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div id="loadingIndicator" class="loading-overlay" style="display:none;">
+            <div class="spinner"></div>
+            <p id="loadingText">प्रसंस्करण जारी है...</p>
+        </div>
+    </div>
+
+    <!-- Logo Crop Tool Modal (hidden by default) -->
+    <div id="logoCropModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>लोगो फसल समायोजित करें</h2>
+            <p>फसल क्षेत्र को समायोजित करने के लिए खींचें और ज़ूम करें</p>
+            <div id="cropPreview" class="crop-preview"></div>
+            <div class="modal-actions">
+                <button id="saveCropBtn" class="btn btn-primary">Save & Regenerate</button>
+                <button id="cancelCropBtn" class="btn btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PDF Progress Modal -->
+    <div id="pdfProgressModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <h2>रिपोर्ट बना रहे हैं...</h2>
+            <div class="progress-bar">
+                <div id="pdfProgress" class="progress-fill"></div>
+            </div>
+            <p id="pdfStatus">शुरुआत...</p>
+        </div>
+    </div>
+
+    <!-- Local Library Files (must be present or loaded) -->
+    <script src="libs/opencv.js"></script>
+    <script src="libs/pdf-lib.min.js"></script>
+    
+    <!-- Configuration -->
+    <script src="src/config.js"></script>
+    
+    <!-- Utility & Storage -->
+    <script src="src/i18n-hi.js"></script>
+    <script src="src/storage.js"></script>
+    <script src="src/auth.js"></script>
+    
+    <!-- Image Processing -->
+    <script src="src/preprocess.js"></script>
+    <script src="src/overlay.js"></script>
+    <script src="src/features.js"></script>
+    
+    <!-- Engine & Report -->
+    <script src="src/engine.js"></script>
+    <script src="src/timeline.js"></script>
+    <script src="src/report.js"></script>
+    
+    <!-- UI & App -->
+    <script src="src/ui.js"></script>
+    <script src="src/app.js"></script>
+</body>
+</html>

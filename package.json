@@ -1,0 +1,56 @@
+{
+  "name": "guruji-hastrekha-dashboard",
+  "version": "1.0.0",
+  "description": "Offline-first Palmistry Analysis Dashboard with AI Predictions",
+  "author": "Guruji Team",
+  "license": "MIT",
+  "private": true,
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/guruji-hastrekha-dashboard.git"
+  },
+  "keywords": [
+    "palmistry",
+    "hastrekha",
+    "predictions",
+    "offline",
+    "webapp",
+    "hindi",
+    "guruji"
+  ],
+  "scripts": {
+    "serve": "python -m http.server 8000",
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "opencv.js": "^4.5.2",
+    "pdf-lib": "^1.17.1"
+  },
+  "browsers": [
+    "Chrome >= 90",
+    "Firefox >= 88",
+    "Safari >= 13",
+    "Edge >= 90"
+  ],
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "features": {
+    "authentication": "PBKDF2 Password Hashing",
+    "storage": "IndexedDB",
+    "imageProcessing": "OpenCV.js",
+    "pdfGeneration": "pdf-lib",
+    "language": "Hindi",
+    "offline": true,
+    "singlePage": true
+  },
+  "directories": {
+    "lib": "libs",
+    "src": "src",
+    "rules": "src/rules",
+    "assets": "assets"
+  }
+}

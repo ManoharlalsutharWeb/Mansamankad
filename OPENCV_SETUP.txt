@@ -1,0 +1,20 @@
+// OpenCV.js Library
+// 
+// INSTRUCTIONS FOR SETUP:
+// 
+// 1. Download OpenCV.js from:
+//    https://docs.opencv.org/4.5.2/opencv.js
+//    
+//    OR use CDN directly by adding to index.html:
+//    <script async src="https://docs.opencv.org/4.5.2/opencv.js"></script>
+//
+// 2. For offline-first (recommended):
+//    - Download opencv.js (~10MB)
+//    - Place in /libs/opencv.js
+//    - App will work fully offline
+//
+// 3. File will be automatically detected by the app
+//    when index.html loads
+//
+// NOTE: This is a REQUIRED library for image processing
+// Without it, the app will show warning but won't crash
